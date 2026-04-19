@@ -1,92 +1,363 @@
 <html>
     <head>
         <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
             p{
                 color: white;
             }
+            
             body{
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
                 background-color: #2b2b2b;
             }
+            
             img{
                 width: 500px;
                 height: 500px;
             }
+            h1, h2{
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            img{
+                margin: 0 auto;
+                border: 1px solid red;
+                border-radius: 20px;
+            }
+            .img-wrapper{
+                text-align: center;
+                padding-bottom: 20px;
+                padding-top: 20px;
+            }            
+            .gallery-container {
+                background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+                border: 3px solid crimson;
+                border-radius: 15px;
+                padding: 40px;
+                margin: 30px auto;
+                max-width: 90%;
+                text-align: center;
+                box-shadow: 0 8px 32px rgba(220, 20, 60, 0.3);
+                animation: fadeIn 0.5s ease-in;
+            }
+            
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.95);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+            
+            .gallery-title {
+                color: crimson;
+                font-size: 24px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+            
+            .word-display {
+                font-size: 48px;
+                font-weight: bold;
+                color: #00d4ff;
+                word-wrap: break-word;
+                margin: 30px 0;
+                min-height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: wordChange 0.6s ease-in-out;
+                text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            }
+            
+            @keyframes wordChange {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                50% {
+                    opacity: 0.5;
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .gallery-info {
+                color: #888;
+                font-size: 14px;
+                margin-top: 20px;
+            }
+            
+            .refresh-button {
+                background-color: crimson;
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                font-size: 16px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s;
+                margin-top: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+            
+            .refresh-button:hover {
+                background-color: #ff1493;
+                transform: scale(1.05);
+                box-shadow: 0 0 15px rgba(220, 20, 60, 0.6);
+            }
+            
+            .refresh-button:active {
+                transform: scale(0.98);
+            }
+            
+            .list-wrapper {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+                gap: 15px;
+                padding: 30px;
+                max-width: 90%;
+                margin: 40px auto;
+                background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(43, 43, 43, 0.8));
+                border-radius: 15px;
+                border: 2px solid rgba(220, 20, 60, 0.3);
+            }
+            
+            .list-wrapper p {
+                background: linear-gradient(135deg, rgba(43, 43, 43, 0.9), rgba(60, 60, 60, 0.9));
+                border-left: 4px solid crimson;
+                padding: 15px 20px;
+                margin: 0;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            
+            .list-wrapper p:hover {
+                background: linear-gradient(135deg, rgba(220, 20, 60, 0.15), rgba(255, 20, 147, 0.1));
+                border-left-color: #00d4ff;
+                transform: translateX(8px);
+                box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3), 0 0 15px rgba(0, 212, 255, 0.2);
+                color: #00d4ff;
+            }
+        
 
         </style>
     </head>    
     <body> 
+
         <h1 style="color: crimson;"> All Words in Spelling bee Master </h1>
         <h2> By Xenny Playz</h2>
-        <img src="./noFilter.webp" alt="Trulli"/>
-        <p> 1. Chargoggagoggmanchauggagoggchaubunagungamaugg</p> 
-        <p> 2. Pneumonoulramicroscopicsilicovolcanoconiosis</p>
-        <p> 3. Ribulosebisphosphatecarboxylaseoxygenase </p>
-        <p> 4. Corynebacteriumpseudotuberculosis (NEW)</p>
-        <p> 5. Eellegofusciouhipoppokunurious </p>
-        <p> 6. Autothaumaturgist </p>
-        <p> 7. Dermatofibrosarcomaprotuberans</p>
-        <p> 8. Polyphiloprogenitive</p>
-        <p> 9. Canaliculodacryocystorhinostomy</p>
-        <p> 10. Antixerophthalmic</p>
-        <p> 11. Bourgeoisification</p>
-        <p> 12. Psychoneuroendocrinological </p>
-        <p> 13. Antidisestablishmentarianism </p>
-        <p> 14. Pseudorhombicuboctahedron</p>
-        <p> 15. Pseudopseudohypoparathyroidism</p>
-        <p> 16. Ventriculocisternostomy</p>
-        <p> 17. Thyroparathyroidism</p>
-        <p> 18. Cholangiocholecystocholedochectomy</p>
-        <p> 19. Supercalifragilisticexpialidocious</p>
-        <p> 20. Floccinaucinihilipilification</p>
-        <p> 21. Tonsillopharyngitis</p>
-        <p> 22. Lymphangioleiomyomatosis</p>
-        <p> 23. Hexakosioihexekontahexaphobia</p>
-        <p> 24. Micropachycephalosaurus</p>
-        <p> 25. Nonanonacontanonactanonaliagon </p>
-        <p> 26. Uvulopalatopharyngoplasty</p>
-        <p> 27. Laryngotracheobronchitis</p>
-        <p> 28. Fluorotetraferriphlogopite</p>
-        <p> 29. Hippopotomonstrosesquippedaliophobia/Hippopotomonstrosesquipedaliophobia</p>
-        <p> 30. Dextrodeorsumversion</p>
-        <p> 31. Anthropomorphisation</p>
-        <p> 32. Acrocephalopolydactylousdisplaysia (NEW)</p>
-        <p> 33. Hematospectrophotometrically/Haematospectrophotometrically</p>
-        <p> 34. otorhinolaryngological</p>
-        <p> 35. Immunoelectrochemiluminescence</p>
-        <p> 36. Counterimmunoelectrophoresis</p>
-        <p> 37. Psychophysicotherapeutics</p>
-        <p> 38. Acetylglucocoroglaucigenin</p>
-        <p> 39. Dichlorodiphenyltrichloroethane</p>
-        <p> 40. Laparohysterosalpingooophorectomy</p>
-        <p> 41. Neohesperidindihydrochalcone</p>
-        <p> 42. Orotatephosphoribosyltransferase (NEW)</p>
-        <p> 43. Photoplethysmography</p>
-        <p> 44. Pyrrolizidinealkaloidosis</p>
-        <p> 45. Stereoelectroencephalography</p>
-        <p> 46. Nucleotidylexotransferase</p>
-        <p> 47. Convolvulaceous</p>
-        <p> 48. Honorificabilitudinity/Honourificabilitudinity</p>
-        <p> 49. Corticopontocerebellar</p>
-        <p> 50. Sphygmomanometer</p>
-        <p> 51. Loncastuximabtesirine</p>
-        <p> 52. Gegenstandstheorie</p>
-        <p> 53. Adrenocorticotropin</p>
-        <p> 54. Spectrophotofluorometry</p>
-        <p> 55. Sphenopalatineganglioneuralgia</p>
-        <p> 56. Chondromyxohemangioendotheliosarcoma</p>
-        <p> 57. Sclerectoiridectomy</p>
-        <p> 58. Inositolphosphorylceramide</p>
-        <p> 59. Erythrocytapheresis</p>
-        <p> 60. Diisopropylfluorophosphate</p>
-        <p> 61. Encephalocraniocutaneouslipomatosis</p>
-        <p> 62. Bromochlorodifluoromethane</p>
-        <p> 63. Pneumoencephalography</p>
-        <p> 64. Cholangiopancreatography</p>
+        <div class="img-wrapper"><img src="./noFilter.webp" alt="Trulli"/></div>
+        
+                        <!-- Random Word Gallery -->
+        <div class="gallery-container">
+            <div class="gallery-title">Word Gallery</div>
+            <div class="word-display" id="randomWord">Loading...</div>
+            <button class="refresh-button" onclick="displayRandomWord()">Show Random Word</button>
+            <div class="gallery-info">
+                <p>Next word in <span id="countdown">60</span> seconds</p>
+            </div>
+        </div>
+        <div class="list-wrapper">
+            <p> 1. Chargoggagoggmanchauggagoggchaubunagungamaugg</p> 
+            <p> 2. Pneumonoulramicroscopicsilicovolcanoconiosis</p>
+            <p> 3. Ribulosebisphosphatecarboxylaseoxygenase </p>
+            <p> 4. Corynebacteriumpseudotuberculosis (NEW)</p>
+            <p> 5. Eellegofusciouhipoppokunurious </p>
+            <p> 6. Autothaumaturgist </p>
+            <p> 7. Dermatofibrosarcomaprotuberans</p>
+            <p> 8. Polyphiloprogenitive</p>
+            <p> 9. Canaliculodacryocystorhinostomy</p>
+            <p> 10. Antixerophthalmic</p>
+            <p> 11. Bourgeoisification</p>
+            <p> 12. Psychoneuroendocrinological </p>
+            <p> 13. Antidisestablishmentarianism </p>
+            <p> 14. Pseudorhombicuboctahedron</p>
+            <p> 15. Pseudopseudohypoparathyroidism</p>
+            <p> 16. Ventriculocisternostomy</p>
+            <p> 17. Thyroparathyroidism</p>
+            <p> 18. Cholangiocholecystocholedochectomy</p>
+            <p> 19. Supercalifragilisticexpialidocious</p>
+            <p> 20. Floccinaucinihilipilification</p>
+            <p> 21. Tonsillopharyngitis</p>
+            <p> 22. Lymphangioleiomyomatosis</p>
+            <p> 23. Hexakosioihexekontahexaphobia</p>
+            <p> 24. Micropachycephalosaurus</p>
+            <p> 25. Nonanonacontanonactanonaliagon </p>
+            <p> 26. Uvulopalatopharyngoplasty</p>
+            <p> 27. Laryngotracheobronchitis</p>
+            <p> 28. Fluorotetraferriphlogopite</p>
+            <p> 29. Hippopotomonstrosesquippedaliophobia/Hippopotomonstrosesquipedaliophobia</p>
+            <p> 30. Dextrodeorsumversion</p>
+            <p> 31. Anthropomorphisation</p>
+            <p> 32. Acrocephalopolydactylousdisplaysia (NEW)</p>
+            <p> 33. Hematospectrophotometrically/Haematospectrophotometrically</p>
+            <p> 34. otorhinolaryngological</p>
+            <p> 35. Immunoelectrochemiluminescence</p>
+            <p> 36. Counterimmunoelectrophoresis</p>
+            <p> 37. Psychophysicotherapeutics</p>
+            <p> 38. Acetylglucocoroglaucigenin</p>
+            <p> 39. Dichlorodiphenyltrichloroethane</p>
+            <p> 40. Laparohysterosalpingooophorectomy</p>
+            <p> 41. Neohesperidindihydrochalcone</p>
+            <p> 42. Orotatephosphoribosyltransferase (NEW)</p>
+            <p> 43. Photoplethysmography</p>
+            <p> 44. Pyrrolizidinealkaloidosis</p>
+            <p> 45. Stereoelectroencephalography</p>
+            <p> 46. Nucleotidylexotransferase</p>
+            <p> 47. Convolvulaceous</p>
+            <p> 48. Honorificabilitudinity/Honourificabilitudinity</p>
+            <p> 49. Corticopontocerebellar</p>
+            <p> 50. Sphygmomanometer</p>
+            <p> 51. Loncastuximabtesirine</p>
+            <p> 52. Gegenstandstheorie</p>
+            <p> 53. Adrenocorticotropin</p>
+            <p> 54. Spectrophotofluorometry</p>
+            <p> 55. Sphenopalatineganglioneuralgia</p>
+            <p> 56. Chondromyxohemangioendotheliosarcoma</p>
+            <p> 57. Sclerectoiridectomy</p>
+            <p> 58. Inositolphosphorylceramide</p>
+            <p> 59. Erythrocytapheresis</p>
+            <p> 60. Diisopropylfluorophosphate</p>
+            <p> 61. Encephalocraniocutaneouslipomatosis</p>
+            <p> 62. Bromochlorodifluoromethane</p>
+            <p> 63. Pneumoencephalography</p>
+            <p> 64. Cholangiopancreatography</p>
+        </div>
+        
         <h2> Thanks for visiting! If you want to support me click here: <a href="https://Youtube.com/@XennyPlayz"> My Youtube</a> </h2>
         <h3><a href="https://www.roblox.com/games/17590362521/Spelling-Bee"> The Spelling Bee game </a></h1>
         <h2>Credits</h2>
         <h3> OfficialMaen</h3>
         <h4> (CODED WITH HTML)</h4>
+        
+        <script>
+            // List of all words from the spelling bee master
+            const words = [
+                "Chargoggagoggmanchauggagoggchaubunagungamaugg",
+                "Pneumonoulramicroscopicsilicovolcanoconiosis",
+                "Ribulosebisphosphatecarboxylaseoxygenase",
+                "Corynebacteriumpseudotuberculosis",
+                "Eellegofusciouhipoppokunurious",
+                "Autothaumaturgist",
+                "Dermatofibrosarcomaprotuberans",
+                "Polyphiloprogenitive",
+                "Canaliculodacryocystorhinostomy",
+                "Antixerophthalmic",
+                "Bourgeoisification",
+                "Psychoneuroendocrinological",
+                "Antidisestablishmentarianism",
+                "Pseudorhombicuboctahedron",
+                "Pseudopseudohypoparathyroidism",
+                "Ventriculocisternostomy",
+                "Thyroparathyroidism",
+                "Cholangiocholecystocholedochectomy",
+                "Supercalifragilisticexpialidocious",
+                "Floccinaucinihilipilification",
+                "Tonsillopharyngitis",
+                "Lymphangioleiomyomatosis",
+                "Hexakosioihexekontahexaphobia",
+                "Micropachycephalosaurus",
+                "Nonanonacontanonactanonaliagon",
+                "Uvulopalatopharyngoplasty",
+                "Laryngotracheobronchitis",
+                "Fluorotetraferriphlogopite",
+                "Hippopotomonstrosesquippedaliophobia",
+                "Dextrodeorsumversion",
+                "Anthropomorphisation",
+                "Acrocephalopolydactylousdisplaysia",
+                "Hematospectrophotometrically",
+                "Otorhinolaryngological",
+                "Immunoelectrochemiluminescence",
+                "Counterimmunoelectrophoresis",
+                "Psychophysicotherapeutics",
+                "Acetylglucocoroglaucigenin",
+                "Dichlorodiphenyltrichloroethane",
+                "Laparohysterosalpingooophorectomy",
+                "Neohesperidindihydrochalcone",
+                "Orotatephosphoribosyltransferase",
+                "Photoplethysmography",
+                "Pyrrolizidinealkaloidosis",
+                "Stereoelectroencephalography",
+                "Nucleotidylexotransferase",
+                "Convolvulaceous",
+                "Honorificabilitudinity",
+                "Corticopontocerebellar",
+                "Sphygmomanometer",
+                "Loncastuximabtesirine",
+                "Gegenstandstheorie",
+                "Adrenocorticotropin",
+                "Spectrophotofluorometry",
+                "Sphenopalatineganglioneuralgia",
+                "Chondromyxohemangioendotheliosarcoma",
+                "Sclerectoiridectomy",
+                "Inositolphosphorylceramide",
+                "Erythrocytapheresis",
+                "Diisopropylfluorophosphate",
+                "Encephalocraniocutaneouslipomatosis",
+                "Bromochlorodifluoromethane",
+                "Pneumoencephalography",
+                "Cholangiopancreatography"
+            ];
+            
+            let countdownInterval;
+            let autoChangeInterval;
+            
+            // Function to display a random word
+            function displayRandomWord() {
+                const randomIndex = Math.floor(Math.random() * words.length);
+                const randomWord = words[randomIndex];
+                document.getElementById('randomWord').textContent = randomWord;
+                
+                // Reset countdown timer
+                resetCountdown();
+            }
+            
+            // Function to reset the countdown
+            function resetCountdown() {
+                let countdown = 60;
+                document.getElementById('countdown').textContent = countdown;
+                
+                // Clear any existing interval
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                }
+                
+                // Start new countdown
+                countdownInterval = setInterval(() => {
+                    countdown--;
+                    document.getElementById('countdown').textContent = countdown;
+                    
+                    if (countdown <= 0) {
+                        clearInterval(countdownInterval);
+                    }
+                }, 1000);
+            }
+            
+            // Initialize on page load
+            window.addEventListener('load', () => {
+                displayRandomWord();
+                
+                // Change word every 60 seconds
+                autoChangeInterval = setInterval(displayRandomWord, 60000);
+            });
+        </script>
 </body>
 </html>
